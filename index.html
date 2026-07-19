@@ -4,13 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jozsua Heng — Journey</title>
-  <meta name="description" content="Jozsua Heng — strategy & transformation consultant, co-founder of Golden Island Cruises (Lombok, Indonesia), and builder of maps, tools and interactive software." />
+  <meta name="description" content="Jozsua Heng — co-founder of Golden Island Cruises (Lombok, Indonesia), strategy & transformation consultant, and builder of maps, tools and interactive software." />
 
-  <meta property="og:title" content="Jozsua Heng — Strategy · Ventures · Software" />
-  <meta property="og:description" content="Strategy & transformation consultant, co-founder of Golden Island Cruises, and builder of interactive software." />
+  <meta property="og:title" content="Jozsua Heng — Ventures · Strategy · Software" />
+  <meta property="og:description" content="Co-founder of Golden Island Cruises, strategy & transformation consultant, and builder of interactive software." />
   <meta property="og:type" content="website" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e14'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%236edacb' text-anchor='middle'%3EJH%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e1218'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%236edacb' text-anchor='middle'%3EJH%3C/text%3E%3C/svg%3E" />
+
+  <script>
+    // set the saved (or system) theme before CSS paints, to avoid a flash
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t && window.matchMedia("(prefers-color-scheme: light)").matches) t = "light";
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,6 +30,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <canvas id="specks" aria-hidden="true"></canvas>
 
   <header class="nav">
     <a class="nav-brand" href="index.html" aria-label="Home">
@@ -30,6 +42,10 @@
       <a href="projects.html">Projects</a>
       <a href="about.html">About</a>
     </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.5 4.9 4.9 3.5l2.1 2.1-1.4 1.4-2.1-2.1zm13.5 13.5 1.4-1.4 2.1 2.1-1.4 1.4-2.1-2.1zM1 11h3v2H1v-2zm19 0h3v2h-3v-2zM3.5 19.1l2.1-2.1 1.4 1.4-2.1 2.1-1.4-1.4zM17 5.6l2.1-2.1 1.4 1.4-2.1 2.1-1.4-1.4z"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 22a10 10 0 0 1-8.7-14.9A10 10 0 0 1 11 2.1a1 1 0 0 1 .9 1.6 8 8 0 0 0 8.4 12.4 1 1 0 0 1 1.2 1.4A10 10 0 0 1 12.3 22z"/></svg>
+    </button>
     <a class="nav-cta" href="#contact">Get in touch</a>
   </header>
 
@@ -39,7 +55,7 @@
       <div class="container">
         <h1 class="intro-name reveal">Jozsua Heng</h1>
         <p class="intro-roles reveal">
-          Strategy &amp; transformation consultant &middot; <span class="accent-serif">Co-founder,</span> Golden Island Cruises &middot; Builder
+          <span class="accent-serif">Co-founder,</span> Golden Island Cruises &middot; Strategy &amp; transformation consultant &middot; Builder
         </p>
         <p class="intro-meta reveal">
           <span>Singapore · Lombok · Sydney · Brisbane</span>
@@ -50,11 +66,21 @@
         <div class="aboutme reveal">
           <p class="aboutme-label">About me</p>
           <p>
-            Singapore-raised and Australia-educated, I've spent the past decade
-            moving between corporate transformation, boutique consulting and ventures of
-            my own — currently co-leading an $18m healthcare transformation in
-            Brisbane while running a sailing company in Lombok. I like problems
-            that need both a spreadsheet and a handshake.
+            Singapore-raised and Australia-educated, I started out in the
+            Singapore Armed Forces&rsquo; Supply Command, then spent the next
+            decade moving between corporate transformation, boutique consulting
+            and startups — airlines, hospitality tech, construction, Web3, and
+            most recently a $1B+ healthcare network, where I co-led an $18m
+            finance and supply-chain transformation through to May 2026.
+          </p>
+          <p>
+            In 2024 I co-founded <a href="venture.html" class="accent-serif" style="text-decoration:none">Golden Island Cruises</a>
+            with three local partners — a maritime tourism company in Lombok
+            built on Blue Economy principles, now running a fleet of
+            traditional Phinisi boats and six travel brands. Between
+            engagements I build <a href="projects.html" class="accent-serif" style="text-decoration:none">software</a>
+            that makes complicated things simple. I like problems that need
+            both a spreadsheet and a handshake — in English or Mandarin.
           </p>
         </div>
       </div>
@@ -69,16 +95,16 @@
           <li class="tl-item reveal">
             <div class="tl-when">Nov 2024 — now</div>
             <div class="tl-body">
-              <h3>Co-Founder &amp; Director · Golden Island Cruises</h3>
-              <p class="tl-where">Lombok, Indonesia · maritime tourism</p>
+              <h3>Co-Founder &amp; Director · <a href="venture.html">Golden Island Cruises</a></h3>
+              <p class="tl-where">Lombok, Indonesia · Maritime Tourism</p>
               <details class="tl-details">
                 <summary>Highlights</summary>
                 <ul class="tl-points">
-                  <li>Engineered the pivot from a boutique agency into a <strong>scaled maritime operator</strong> — secured capital and streamlined vessel acquisition to drive a 150% capacity increase within 24 months.</li>
+                  <li>Co-founded the company <strong>with three local partners</strong> and engineered its pivot from a boutique agency into a <strong>scaled maritime operator</strong> — securing capital and streamlining vessel acquisition toward a 150% capacity increase within 24 months.</li>
                   <li>Designed a lean operating model on <strong>Blue Economy principles</strong>, cutting overheads ~25% through vertical integration of the supply chain.</li>
                   <li>Built a <strong>dynamic pricing and yield strategy</strong> to manage revenue across Indonesia's seasonal demand cycles.</li>
-                  <li>Lead a cross-functional, multi-lingual <strong>team of 30</strong>, holding international luxury and safety benchmarks in an emerging-market environment.</li>
-                  <li>Created a social-enterprise framework prioritising <strong>indigenous employment and cultural preservation</strong> — strengthening the brand and securing local government concessions — plus a partnership-pathway equity model for staff.</li>
+                  <li>Help lead a cross-functional, multi-lingual <strong>team of 30</strong>, holding international luxury and safety benchmarks in an emerging-market environment.</li>
+                  <li>Created a social-enterprise framework prioritising <strong>indigenous employment and cultural preservation</strong>, plus a partnership-pathway equity model for staff.</li>
                   <li>Performed bottom-up <strong>valuations and cashflow forecasts</strong> of the fleet and IP to baseline future equity partnerships and funding rounds.</li>
                 </ul>
               </details>
@@ -87,17 +113,17 @@
           </li>
 
           <li class="tl-item reveal">
-            <div class="tl-when">Dec 2024 — now</div>
+            <div class="tl-when">Dec 2024 — May 2026</div>
             <div class="tl-body">
-              <h3>Strategy Business Analyst · Mater</h3>
-              <p class="tl-where">Brisbane, Australia · healthcare ($1B+ network)</p>
+              <h3>Strategy Business Analyst · <a href="https://www.mater.org.au/" target="_blank" rel="noopener">Mater</a></h3>
+              <p class="tl-where">Brisbane, Australia · Healthcare ($1B+ Network)</p>
               <details class="tl-details">
                 <summary>Highlights</summary>
                 <ul class="tl-points">
-                  <li>Co-lead an <strong>$18m organisation-wide finance and supply-chain transformation</strong> ("Making Mater Match Fit" and the Dynamics&nbsp;365 remediation) for one of Australia's largest healthcare providers.</li>
+                  <li>Co-led an <strong>$18m organisation-wide finance and supply-chain transformation</strong> ("Making Mater Match Fit" and the Dynamics&nbsp;365 remediation) for one of Australia's largest healthcare providers.</li>
                   <li>Identified and mitigated <strong>300+ critical data-integrity risks</strong>, directly informing executive decision-making and preventing operational downtime.</li>
                   <li>Translated <strong>600+ business and technical requirements</strong> into an actionable roadmap — six work packages and sixteen workstreams — for senior leadership.</li>
-                  <li>Serve as a strategic aide to the <strong>CFO</strong>, turning complex program data into board-level briefs and presentations.</li>
+                  <li>Served as a strategic aide to the <strong>CFO</strong>, turning complex program data into board-level briefs and presentations.</li>
                 </ul>
               </details>
             </div>
@@ -106,8 +132,8 @@
           <li class="tl-item reveal">
             <div class="tl-when">2022 — 2024</div>
             <div class="tl-body">
-              <h3>Management Consultant → Senior Consultant · GSA</h3>
-              <p class="tl-where">Brisbane, Australia · management consulting · promoted in under two years</p>
+              <h3>Senior Management Consultant · <a href="https://gsamc.com.au/" target="_blank" rel="noopener">GSA Management Consulting</a></h3>
+              <p class="tl-where">Brisbane, Australia · Management Consulting: Private, Public &amp; Defence</p>
               <details class="tl-details">
                 <summary>Highlights</summary>
                 <ul class="tl-points">
@@ -124,13 +150,27 @@
             <div class="tl-when">2022</div>
             <div class="tl-body">
               <h3>Market Research Consultant · Freelance (Web3)</h3>
-              <p class="tl-where">Sydney, Australia · Web3 / EdTech startups</p>
+              <p class="tl-where">Sydney, Australia · Web3 · EdTech &amp; FinTech Startups</p>
               <details class="tl-details">
                 <summary>Highlights</summary>
                 <ul class="tl-points">
                   <li>Architected the <strong>go-to-market strategy</strong> for web3academy, an EdTech venture moving traditional curriculum into decentralised learning.</li>
-                  <li>Ran market and competitor analysis for NiftySubs, feeding a <strong>pre-seed raise of $1.5m at a $13.5m valuation</strong>.</li>
+                  <li>Ran market and competitor analysis for NiftySubs, a FinTech subscription-management startup — feeding a <strong>pre-seed raise of $1.5m at a $13.5m valuation</strong>.</li>
                   <li>Co-designed and launched a <strong>5-day online course</strong> on the fundamentals of Web3.</li>
+                </ul>
+              </details>
+            </div>
+          </li>
+
+          <li class="tl-item tl-edu reveal">
+            <div class="tl-when">2021 — 2022</div>
+            <div class="tl-body">
+              <h3>Master of Management · <a href="https://www.sydney.edu.au/" target="_blank" rel="noopener">The University of Sydney</a></h3>
+              <p class="tl-where">Sydney, Australia · Education</p>
+              <details class="tl-details">
+                <summary>Highlights</summary>
+                <ul class="tl-points">
+                  <li>Led a strategic <strong>market-entry project</strong> for a Web3 EdTech startup — then was retained as its freelance consultant for the implementation.</li>
                 </ul>
               </details>
             </div>
@@ -139,8 +179,8 @@
           <li class="tl-item reveal">
             <div class="tl-when">2020 — 2022</div>
             <div class="tl-body">
-              <h3>Strategy Consultant · Boss Tradie</h3>
-              <p class="tl-where">Brisbane, Australia · construction &amp; trades</p>
+              <h3>Strategy Consultant · <a href="https://bosstradie.com.au/" target="_blank" rel="noopener">Boss Tradie</a></h3>
+              <p class="tl-where">Brisbane, Australia · Construction &amp; Trades</p>
               <details class="tl-details">
                 <summary>Highlights</summary>
                 <ul class="tl-points">
@@ -156,8 +196,8 @@
           <li class="tl-item reveal">
             <div class="tl-when">2019</div>
             <div class="tl-body">
-              <h3>Marketing &amp; Business Development Intern · EatClub</h3>
-              <p class="tl-where">Brisbane, Australia · hospitality tech</p>
+              <h3>Marketing &amp; Business Development Intern · <a href="https://eatclub.com.au/" target="_blank" rel="noopener">EatClub</a></h3>
+              <p class="tl-where">Brisbane, Australia · Hospitality Tech</p>
               <details class="tl-details">
                 <summary>Highlights</summary>
                 <ul class="tl-points">
@@ -169,11 +209,27 @@
             </div>
           </li>
 
+          <li class="tl-item tl-edu reveal">
+            <div class="tl-when">2019 — 2020</div>
+            <div class="tl-body">
+              <h3>B. Business Management · <a href="https://www.uq.edu.au/" target="_blank" rel="noopener">The University of Queensland</a></h3>
+              <p class="tl-where">Brisbane, Australia · Education · Major in International Business</p>
+              <details class="tl-details">
+                <summary>Highlights</summary>
+                <ul class="tl-points">
+                  <li>Awarded the 2020 <strong>Dean's Commendation for Academic Excellence</strong> — GPA in the top 10%.</li>
+                  <li>As <strong>President of AIESEC UQ</strong>, orchestrated a merger of the UQ and QUT chapters, rescuing the program from insolvency.</li>
+                  <li><strong>Master of Ceremonies</strong> for a 300-person gala, and mentor in the UQ BEL Global Mates program.</li>
+                </ul>
+              </details>
+            </div>
+          </li>
+
           <li class="tl-item reveal">
             <div class="tl-when">2018</div>
             <div class="tl-body">
-              <h3>Corporate Communications Intern · Regional Express (Rex)</h3>
-              <p class="tl-where">Sydney, Australia · aviation</p>
+              <h3>Corporate Communications Intern · <a href="https://www.rex.com.au/" target="_blank" rel="noopener">Regional Express (Rex)</a></h3>
+              <p class="tl-where">Sydney, Australia · Aviation</p>
               <details class="tl-details">
                 <summary>Highlights</summary>
                 <ul class="tl-points">
@@ -188,14 +244,29 @@
           <li class="tl-item reveal">
             <div class="tl-when">2016 — 2018</div>
             <div class="tl-body">
-              <h3>Finance &amp; Procurement Specialist · Singapore Armed Forces</h3>
-              <p class="tl-where">Singapore · defence · national service, Supply Command HQ</p>
+              <h3>Finance &amp; Procurement Specialist · <a href="https://www.mindef.gov.sg/" target="_blank" rel="noopener">Singapore Armed Forces</a></h3>
+              <p class="tl-where">Singapore · Defence · National Service, Supply Command HQ</p>
               <details class="tl-details">
                 <summary>Highlights</summary>
                 <ul class="tl-points">
                   <li>Managed finance and procurement at <strong>HQ Combat Service Support Command</strong>, including official and confidential government documentation.</li>
                   <li>Audited records and accounts, producing <strong>risk evaluation reports</strong> and mitigation strategies.</li>
                   <li>Process-mapped and <strong>redesigned the tender system</strong> to reduce vulnerabilities in procurement.</li>
+                </ul>
+              </details>
+            </div>
+          </li>
+
+          <li class="tl-item tl-edu reveal">
+            <div class="tl-when">2013 — 2016</div>
+            <div class="tl-body">
+              <h3>Diploma in Business Administration · <a href="https://www.sp.edu.sg/" target="_blank" rel="noopener">Singapore Polytechnic</a></h3>
+              <p class="tl-where">Singapore · Education</p>
+              <details class="tl-details">
+                <summary>Highlights</summary>
+                <ul class="tl-points">
+                  <li>Specialised in <strong>Marketing Management and International Business &amp; Trade</strong>.</li>
+                  <li>Served as a <strong>School of Business Student Ambassador</strong> and organising chairman for the cohort's bonding day.</li>
                 </ul>
               </details>
             </div>

@@ -54,14 +54,25 @@ resource; the site degrades gracefully to system fonts offline.
   glow (`#email-btn` + `.illuminate`). Every effect is disabled under
   `prefers-reduced-motion`.
 
-Key content decisions (user-confirmed 2026-07-19): headline title is
-**"Strategy & transformation consultant"**; locations read
-**Singapore · Lombok · Sydney · Brisbane**; contact is LinkedIn + GitHub
-only (no Instagram); timeline highlights are collapsed `<details>` blocks;
-the Venture page lists the six-brand network (Golden Island Cruises,
-17Tour Agency, Lombok Tour Booking, Komodo Island Tour .id, Gili Trawangan
-Tour & Travel, Bali Gili Fast Boat Official); the Projects page leads with
-consulting engagement cards (case studies are placeholders for now).
+Key content decisions (user-confirmed 2026-07-19): intro order is
+**Co-founder first**, then "Strategy & transformation consultant · Builder";
+locations **Singapore · Lombok · Sydney · Brisbane**; LinkedIn + GitHub only
+(no Instagram); timeline highlights are collapsed `<details>` blocks, with
+**education entries interleaved** (class `tl-edu`, diamond markers) and
+company names linked to their websites; industries are capitalised; GSA is
+"Senior Management Consultant · GSA Management Consulting" with **no
+"promoted in under two years"** line (user disliked it); **Mater ended May
+2026** (past tense); GIC was co-founded **with three local partners**.
+The site has a **light/dark theme toggle** (localStorage `theme`, pre-paint
+script in each page's <head>) and a floating-speckle canvas backdrop
+(`#specks`, drawn in script.js). The Venture page uses real photos scraped
+from komododiscoverytour.com (assets/venture/) including an Apple-style
+scrollytelling "voyage" section (`.story`), and the six **brands** (user
+asked what to call them — "brands", not storefronts) show logos from
+assets/brands/ (also sourced from the GIC site). The Projects page leads
+with consulting engagement cards, each with an inline SVG line icon
+(case studies are placeholders for now). About page includes a Quick facts
+card with work rights (Singapore citizen · Australian PR).
 - `assets/` — screenshots of the live projects, captured with headless
   Chrome and compressed to ~1200px JPEGs. To refresh one:
   `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"

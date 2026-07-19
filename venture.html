@@ -4,9 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jozsua Heng — Golden Island Cruises</title>
-  <meta name="description" content="Golden Island Cruises — the maritime tourism venture Jozsua Heng co-founded in Lombok, Indonesia — and its network of six travel brands." />
+  <meta name="description" content="Golden Island Cruises — the maritime tourism venture Jozsua Heng co-founded with three local partners in Lombok, Indonesia — and its network of six travel brands." />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e14'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%236edacb' text-anchor='middle'%3EJH%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e1218'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%236edacb' text-anchor='middle'%3EJH%3C/text%3E%3C/svg%3E" />
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t && window.matchMedia("(prefers-color-scheme: light)").matches) t = "light";
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,6 +25,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <canvas id="specks" aria-hidden="true"></canvas>
 
   <header class="nav">
     <a class="nav-brand" href="index.html" aria-label="Home">
@@ -26,6 +37,10 @@
       <a href="projects.html">Projects</a>
       <a href="about.html">About</a>
     </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.5 4.9 4.9 3.5l2.1 2.1-1.4 1.4-2.1-2.1zm13.5 13.5 1.4-1.4 2.1 2.1-1.4 1.4-2.1-2.1zM1 11h3v2H1v-2zm19 0h3v2h-3v-2zM3.5 19.1l2.1-2.1 1.4 1.4-2.1 2.1-1.4-1.4zM17 5.6l2.1-2.1 1.4 1.4-2.1 2.1-1.4-1.4z"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 22a10 10 0 0 1-8.7-14.9A10 10 0 0 1 11 2.1a1 1 0 0 1 .9 1.6 8 8 0 0 0 8.4 12.4 1 1 0 0 1 1.2 1.4A10 10 0 0 1 12.3 22z"/></svg>
+    </button>
     <a class="nav-cta" href="#contact">Get in touch</a>
   </header>
 
@@ -34,62 +49,87 @@
       <p class="eyebrow reveal"><span class="eyebrow-line"></span>The venture &middot; Lombok, Indonesia</p>
       <h1 class="section-title reveal">Golden Island <em class="accent-serif">Cruises</em></h1>
       <p class="lede reveal">
-        In late 2024 I co-founded a maritime tourism company sailing the waters
-        between Lombok and Komodo National Park — four-day, three-night voyages
-        aboard traditional Phinisi boats, past pink-sand beaches, Padar Island
-        and the Komodo dragons themselves.
+        Co-founded in late 2024 with three local partners: a maritime tourism
+        company sailing traditional Phinisi boats between Lombok and Komodo
+        National Park — licensed, thirty-strong, and built on Blue Economy
+        principles.
       </p>
     </div>
 
     <section class="section" style="padding-top: 0;">
       <div class="container">
-        <figure class="venture-figure reveal">
-          <a class="browser-frame parallax" data-speed="0.05" href="https://komododiscoverytour.com/" target="_blank" rel="noopener">
-            <div class="browser-bar">
-              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-              <span class="browser-url">komododiscoverytour.com</span>
-            </div>
-            <img src="assets/gic.jpg" alt="Golden Island Cruises website — the crew welcoming guests" />
-          </a>
-        </figure>
+        <!-- photo mosaic -->
+        <div class="mosaic reveal">
+          <figure><img src="assets/venture/boat.jpg" alt="A Golden Island Cruises Phinisi boat at sea" /></figure>
+          <figure><img src="assets/venture/phinisi.jpg" alt="Aboard the Phinisi" /></figure>
+          <figure><img src="assets/venture/crew.jpg" alt="The Golden Island Cruises crew" /></figure>
+        </div>
 
+        <!-- scrollytelling: the voyage -->
+        <p class="eyebrow reveal"><span class="eyebrow-line"></span>The signature voyage · 4 days, 3 nights</p>
+        <div class="story">
+          <div class="story-media" aria-hidden="true">
+            <img src="assets/venture/aerial.jpg" alt="" class="active" />
+            <img src="assets/venture/komodo.jpg" alt="" />
+            <img src="assets/venture/padar.jpg" alt="" />
+            <img src="assets/venture/manta.jpg" alt="" />
+            <img src="assets/venture/deluxe.jpg" alt="" />
+          </div>
+          <div class="story-steps">
+            <div class="step">
+              <p class="step-num">01 — Set sail from Lombok</p>
+              <h3>Open water, hidden sandbars</h3>
+              <p>The crossing to Labuan Bajo threads past empty white sandbars
+              and reefs you can only reach by boat — four days of island-hopping
+              in either direction.</p>
+            </div>
+            <div class="step">
+              <p class="step-num">02 — Komodo National Park</p>
+              <h3>Walk with dragons</h3>
+              <p>A guided trek through the UNESCO-listed park to meet the
+              world's largest lizard where it actually lives — one of the seven
+              wonders of nature.</p>
+            </div>
+            <div class="step">
+              <p class="step-num">03 — Padar Island</p>
+              <h3>The ridge walk</h3>
+              <p>A dawn climb over three sweeping bays — the view that made
+              this corner of Indonesia famous.</p>
+            </div>
+            <div class="step">
+              <p class="step-num">04 — Beneath the surface</p>
+              <h3>Mantas, turtles, Pink Beach</h3>
+              <p>Snorkelling with manta rays and — in season — whale sharks,
+              plus one of the world's few pink-sand beaches.</p>
+            </div>
+            <div class="step">
+              <p class="step-num">05 — Aboard the Phinisi</p>
+              <h3>Built by Sulawesi shipwrights</h3>
+              <p>Traditional boats in two classes, Superior and Deluxe, crewed
+              by locals and held to international safety and comfort
+              benchmarks.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- condensed copy -->
         <div class="venture-grid">
           <div class="venture-copy reveal">
-            <h3>Built on the Blue&nbsp;Economy</h3>
+            <h3>Tourism that gives back</h3>
             <p>
-              The business is designed around a simple idea: tourism should leave
-              the place better than it found it. Our boats are built by
-              traditional Sulawesi shipwrights, our crew is hired locally, and
-              the operating model is structured so staff share in the long-term
-              upside through a partnership-pathway equity scheme.
+              Boats built by traditional Sulawesi shipwrights, a locally hired
+              crew, and a partnership-pathway equity scheme so staff share in
+              the upside — commercially sound, community-first.
             </p>
           </div>
           <div class="venture-copy reveal">
             <h3>Run like a real company</h3>
             <p>
               Licensed by Indonesia&rsquo;s Ministry of Marine Affairs and
-              Fisheries, with a cross-functional team of thirty across
-              operations, sales, marketing and crew — I lead strategy, financial
-              modelling and governance from valuation and cashflow forecasting
-              through to dynamic seasonal pricing.
-            </p>
-          </div>
-          <div class="venture-copy reveal">
-            <h3>The fleet &amp; the route</h3>
-            <p>
-              Two boat classes — Superior and Deluxe — run the signature
-              4-day/3-night crossing between Lombok and Labuan Bajo in both
-              directions: Komodo National Park, whale-shark encounters, the
-              Padar Island ridge walk and Pink Beach along the way.
-            </p>
-          </div>
-          <div class="venture-copy reveal">
-            <h3>What guests say</h3>
-            <p>
-              Reviews consistently call out the crew&rsquo;s warmth and the
-              value of the trips. Read them unfiltered on
-              <a href="https://www.tripadvisor.com/Attraction_Review-g1592993-d27507266-Reviews-Komodo_Island_Tour_Golden_island_cruises-Senggigi_Lombok_West_Nusa_Tenggara.html" target="_blank" rel="noopener">Tripadvisor</a>
-              — the good and the growing pains alike; we read every one.
+              Fisheries. Four co-founders, thirty people. I lead strategy,
+              financial modelling and governance — from valuations and cashflow
+              forecasting to dynamic seasonal pricing. Guests rate us warmly on
+              <a href="https://www.tripadvisor.com/Attraction_Review-g1592993-d27507266-Reviews-Komodo_Island_Tour_Golden_island_cruises-Senggigi_Lombok_West_Nusa_Tenggara.html" target="_blank" rel="noopener">Tripadvisor</a>.
             </p>
           </div>
         </div>
@@ -121,44 +161,50 @@
         <!-- brand network -->
         <div class="brands">
           <p class="eyebrow reveal"><span class="eyebrow-line"></span>The wider network</p>
-          <h2 class="section-title reveal" style="font-size: clamp(26px, 3.6vw, 36px);">One venture, <em class="accent-serif">six storefronts</em></h2>
+          <h2 class="section-title reveal" style="font-size: clamp(26px, 3.6vw, 34px);">One venture, <em class="accent-serif">six brands</em></h2>
           <p class="lede reveal">
-            Golden Island Cruises is the flagship, but the group operates a
-            family of brands — each serving a different route, audience or
-            search market across Lombok, the Gilis, Komodo and Bali.
+            Golden Island Cruises is the flagship, and the group runs a family
+            of brands — each serving a different route, audience or search
+            market across Lombok, the Gilis, Komodo and Bali.
           </p>
           <div class="brand-grid">
             <a class="brand-card flagship reveal" href="https://komododiscoverytour.com/" target="_blank" rel="noopener">
+              <img class="brand-logo" src="assets/brands/gic.png" alt="Golden Island Cruises logo" loading="lazy" />
               <h4>Golden Island Cruises</h4>
               <p class="brand-domain">komododiscoverytour.com</p>
               <p>The flagship — Phinisi voyages between Lombok, Komodo National Park and Labuan Bajo.</p>
               <span class="brand-go">Visit ↗</span>
             </a>
             <a class="brand-card reveal" href="https://17touragency.com/en/" target="_blank" rel="noopener">
+              <img class="brand-logo" src="assets/brands/17tour.png" alt="17Tour Agency logo" loading="lazy" />
               <h4>17Tour Agency</h4>
               <p class="brand-domain">17touragency.com</p>
               <p>Tours across Lombok, the Gili Islands and Komodo — from Rinjani treks to honeymoon packages.</p>
               <span class="brand-go">Visit ↗</span>
             </a>
             <a class="brand-card reveal" href="https://lomboktourbooking.com/en/" target="_blank" rel="noopener">
+              <img class="brand-logo" src="assets/brands/lomboktourbooking.png" alt="Lombok Tour Booking logo" loading="lazy" />
               <h4>Lombok Tour Booking</h4>
               <p class="brand-domain">lomboktourbooking.com</p>
               <p>Lombok tour packages — notably guided by local Sasak women guides.</p>
               <span class="brand-go">Visit ↗</span>
             </a>
             <a class="brand-card reveal" href="https://komodoislandtour.id/en/" target="_blank" rel="noopener">
+              <img class="brand-logo" src="assets/brands/komodoislandtour.png" alt="Komodo Island Tour logo" loading="lazy" />
               <h4>Komodo Island Tour</h4>
               <p class="brand-domain">komodoislandtour.id</p>
               <p>Dedicated Komodo boat-tour packages departing Lombok and Labuan Bajo.</p>
               <span class="brand-go">Visit ↗</span>
             </a>
             <a class="brand-card reveal" href="https://jalanjalansebentar.com/eng/" target="_blank" rel="noopener">
+              <img class="brand-logo" src="assets/brands/gilitrawangan.png" alt="Gili Trawangan Tour & Travel logo" loading="lazy" />
               <h4>Gili Trawangan Tour &amp; Travel</h4>
               <p class="brand-domain">jalanjalansebentar.com</p>
               <p>Snorkelling trips around the three Gilis, Lombok day tours and Rinjani summits.</p>
               <span class="brand-go">Visit ↗</span>
             </a>
             <a class="brand-card reveal" href="https://baligilifastboat.id/en/" target="_blank" rel="noopener">
+              <img class="brand-logo" src="assets/brands/baligili.png" alt="Bali Gili Fast Boat Official logo" loading="lazy" />
               <h4>Bali Gili Fast Boat Official</h4>
               <p class="brand-domain">baligilifastboat.id</p>
               <p>Fast-boat transfers connecting Bali, the Gili Islands and Lombok, with offices across the route.</p>

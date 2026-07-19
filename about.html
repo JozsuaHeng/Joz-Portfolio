@@ -8,6 +8,16 @@
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e14'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%236edacb' text-anchor='middle'%3EJH%3C/text%3E%3C/svg%3E" />
 
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t && window.matchMedia("(prefers-color-scheme: light)").matches) t = "light";
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -15,6 +25,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <canvas id="specks" aria-hidden="true"></canvas>
 
   <header class="nav">
     <a class="nav-brand" href="index.html" aria-label="Home">
@@ -26,6 +37,10 @@
       <a href="projects.html">Projects</a>
       <a href="about.html" aria-current="page">About</a>
     </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.5 4.9 4.9 3.5l2.1 2.1-1.4 1.4-2.1-2.1zm13.5 13.5 1.4-1.4 2.1 2.1-1.4 1.4-2.1-2.1zM1 11h3v2H1v-2zm19 0h3v2h-3v-2zM3.5 19.1l2.1-2.1 1.4 1.4-2.1 2.1-1.4-1.4zM17 5.6l2.1-2.1 1.4 1.4-2.1 2.1-1.4-1.4z"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 22a10 10 0 0 1-8.7-14.9A10 10 0 0 1 11 2.1a1 1 0 0 1 .9 1.6 8 8 0 0 0 8.4 12.4 1 1 0 0 1 1.2 1.4A10 10 0 0 1 12.3 22z"/></svg>
+    </button>
     <a class="nav-cta" href="#contact">Get in touch</a>
   </header>
 
@@ -63,6 +78,23 @@
             <h3>Toolkit</h3>
             <p class="chips">
               <span>English &amp; Mandarin</span><span>Financial modelling</span><span>D365</span><span>Salesforce</span><span>SAP Ariba</span><span>Jira</span><span>Miro</span><span>SPSS</span><span>Generative AI</span><span>Web development</span>
+            </p>
+          </div>
+          <div class="about-card reveal">
+            <h3>Quick facts</h3>
+            <ul>
+              <li><strong>Work rights</strong> — Singapore citizen · Australian permanent resident (full working rights in both)</li>
+              <li><strong>Based between</strong> — Singapore, Lombok, Sydney &amp; Brisbane</li>
+              <li><strong>Languages</strong> — English &amp; Mandarin</li>
+            </ul>
+          </div>
+          <div class="about-card reveal">
+            <h3>Right now</h3>
+            <p>
+              Growing <a href="venture.html" style="color: var(--accent); text-decoration: none;">Golden Island Cruises</a>
+              with my three co-founders, building
+              <a href="projects.html" style="color: var(--accent); text-decoration: none;">software</a> on the side,
+              and open to the next strategy or consulting challenge.
             </p>
           </div>
           <div class="about-card reveal">
