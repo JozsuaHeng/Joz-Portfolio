@@ -61,10 +61,10 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
       if (s.y < -2) s.y = h + 2;
       const twinkle = 0.5 + 0.5 * Math.sin(s.tw + t * 0.0011);
       const base = s.teal ? 0.5 : 0.32;
-      ctx.globalAlpha = twinkle * base * (light ? 0.5 : 1);
+      ctx.globalAlpha = twinkle * base * (light ? 0.9 : 1);
       ctx.fillStyle = s.teal
         ? (light ? "#0d8577" : "#6edacb")
-        : (light ? "#2c3a35" : "#cfd8e2");
+        : (light ? "#233029" : "#cfd8e2");
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
       ctx.fill();

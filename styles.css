@@ -47,7 +47,23 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; background: var(--bg); }
+html {
+  scroll-behavior: smooth;
+  /* faint fixed glow at the top gives the flat dark ink some depth */
+  background:
+    radial-gradient(65% 45% at 50% -10%, rgba(110, 218, 203, 0.055), transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+}
+/* light mode: layered soft washes so the paper isn't a flat white wall */
+html[data-theme="light"] {
+  background:
+    radial-gradient(70% 55% at 10% -5%, rgba(13, 133, 119, 0.1), transparent 60%),
+    radial-gradient(55% 45% at 100% 12%, rgba(96, 125, 115, 0.11), transparent 62%),
+    radial-gradient(85% 60% at 50% 112%, rgba(13, 133, 119, 0.09), transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+}
 
 body {
   background: transparent;
