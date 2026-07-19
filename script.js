@@ -1,70 +1,12 @@
 /* ============================================================
-   Jozsua Heng — portfolio interactions
-   - starfield canvas in the hero (slow drift, gold + blue specks)
+   Jozsua Heng — portfolio interactions (shared by all pages)
    - reveal-on-scroll with per-section stagger
-   - animated stat counters
-   - nav: solid background after scroll + active section link
+   - animated stat counters (venture page)
    - gentle parallax on framed screenshots
    All effects are skipped when the visitor prefers reduced motion.
    ============================================================ */
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-/* ---------- starfield ---------- */
-(function starfield() {
-  const canvas = document.getElementById("sky");
-  if (!canvas) return;
-  const ctx = canvas.getContext("2d");
-  let stars = [];
-  let w = 0, h = 0, dpr = 1;
-
-  function resize() {
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    w = canvas.clientWidth = canvas.offsetWidth;
-    h = canvas.clientHeight = canvas.offsetHeight;
-    canvas.width = w * dpr;
-    canvas.height = h * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const count = Math.min(220, Math.floor((w * h) / 6500));
-    stars = Array.from({ length: count }, () => ({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      r: Math.random() * 1.4 + 0.3,
-      // most stars are cool white-blue; roughly 1 in 6 is warm gold
-      gold: Math.random() < 0.17,
-      tw: Math.random() * Math.PI * 2,      // twinkle phase
-      speed: 0.008 + Math.random() * 0.028,  // drift speed
-    }));
-  }
-
-  function frame(t) {
-    ctx.clearRect(0, 0, w, h);
-    for (const s of stars) {
-      s.x -= s.speed;               // slow drift to the left, like sailing
-      if (s.x < -2) s.x = w + 2;
-      const twinkle = 0.55 + 0.45 * Math.sin(s.tw + t * 0.0012);
-      ctx.globalAlpha = twinkle * (s.gold ? 0.9 : 0.65);
-      ctx.fillStyle = s.gold ? "#e0b568" : "#c9d4e8";
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-    if (!document.hidden) requestAnimationFrame(frame);
-  }
-
-  resize();
-  window.addEventListener("resize", resize);
-  if (reducedMotion) {
-    // draw one static frame, no animation
-    frame(0);
-  } else {
-    requestAnimationFrame(frame);
-    document.addEventListener("visibilitychange", () => {
-      if (!document.hidden) requestAnimationFrame(frame);
-    });
-  }
-})();
 
 /* ---------- reveal on scroll (with stagger) ---------- */
 (function reveals() {
@@ -133,30 +75,6 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
     { threshold: 0.5 }
   );
   nums.forEach((el) => io.observe(el));
-})();
-
-/* ---------- nav state ---------- */
-(function nav() {
-  const navEl = document.getElementById("nav");
-  const links = document.querySelectorAll(".nav-links a");
-  const sections = Array.from(links).map((a) =>
-    document.querySelector(a.getAttribute("href"))
-  );
-
-  function onScroll() {
-    navEl.classList.toggle("scrolled", window.scrollY > 40);
-
-    // highlight the section currently in the middle of the viewport
-    const mid = window.scrollY + window.innerHeight * 0.4;
-    let current = -1;
-    sections.forEach((sec, i) => {
-      if (sec && sec.offsetTop <= mid) current = i;
-    });
-    links.forEach((a, i) => a.classList.toggle("active", i === current));
-  }
-
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
 })();
 
 /* ---------- gentle parallax on framed screenshots ---------- */

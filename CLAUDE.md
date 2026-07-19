@@ -2,8 +2,19 @@
 
 ## What this project is
 
-**portfolio** — Jozsua Heng's personal portfolio website. A single-page,
-dark-themed site presenting:
+**portfolio** — Jozsua Heng's personal portfolio website. A **multi-page**,
+dark-themed site (tab-style nav, no hero — a compact resume-style layout,
+restructured 2026-07-19 at the user's request after an earlier one-page
+version). Pages:
+
+- `index.html` — **Journey**: compact intro block, then the career timeline
+  with expanded bullet points per role.
+- `venture.html` — **Venture**: Golden Island Cruises.
+- `projects.html` — **Projects**: feature rows + fun experiments.
+- `about.html` — **About**: education, leadership, toolkit, drives.
+
+All pages share `styles.css`, `script.js`, and the same nav (active tab via
+`aria-current="page"`) and contact footer. Presenting:
 
 - **Golden Island Cruises** (the flagship section) — the maritime tourism
   venture Jozsua co-founded in Lombok, Indonesia (Nov 2024). Links out to
@@ -28,13 +39,14 @@ opened straight from `index.html` or hosted on GitHub Pages (`.nojekyll`
 included). Google Fonts (Inter + Instrument Serif) is the only external
 resource; the site degrades gracefully to system fonts offline.
 
-- `index.html` — all content and structure.
+- `index.html` / `venture.html` / `projects.html` / `about.html` — the four
+  pages (see above). Nav and footer markup is duplicated across all four —
+  keep them in sync when editing either.
 - `styles.css` — design system (dark background `#0a0d14`, gold accent
   `#e0b568` echoing the Golden Island Cruises brand), responsive layout,
   reveal/parallax styling, reduced-motion fallbacks.
-- `script.js` — hero starfield canvas, IntersectionObserver
-  reveal-on-scroll with stagger, animated stat counters, nav
-  scrolled/active states, gentle parallax on the framed screenshots.
+- `script.js` — IntersectionObserver reveal-on-scroll with stagger,
+  animated stat counters, gentle parallax on the framed screenshots.
   Every effect is disabled under `prefers-reduced-motion`.
 - `assets/` — screenshots of the live projects, captured with headless
   Chrome and compressed to ~1200px JPEGs. To refresh one:

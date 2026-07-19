@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jozsua Heng — Projects</title>
+  <meta name="description" content="Software Jozsua Heng has designed and shipped end-to-end: interactive maps, scheduling tools and generative experiments — all live and free to use." />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0d14'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23e0b568' text-anchor='middle'%3EJH%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <a class="nav-brand" href="index.html">
+      <span class="monogram">JH</span>
+      <span class="brand-name">Jozsua Heng</span>
+    </a>
+    <nav class="nav-links" aria-label="Pages">
+      <a href="index.html">Journey</a>
+      <a href="venture.html">Venture</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="about.html">About</a>
+    </nav>
+    <a class="nav-cta" href="mailto:jozsua.heng@gmail.com">Get in touch</a>
+  </header>
+
+  <main>
+    <div class="page-head container">
+      <p class="eyebrow reveal"><span class="eyebrow-line"></span>Side projects &middot; designed &amp; shipped end-to-end</p>
+      <h1 class="section-title reveal">Software I&rsquo;ve <em class="accent-serif">built</em></h1>
+      <p class="lede reveal">
+        Live, public and free to use. Each one started as a real problem —
+        researching where to live, planning travel, rostering a team — and
+        became a finished product: data pipeline, design and deployment included.
+      </p>
+    </div>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container features">
+
+        <article class="feature">
+          <div class="feature-media reveal">
+            <a class="browser-frame parallax" data-speed="0.05" href="https://jozsuaheng.github.io/Cost-of-living-map/" target="_blank" rel="noopener">
+              <div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="browser-url">Cost of Living Map</span></div>
+              <img src="assets/cost-map.jpg" alt="Cost of Living Map — interactive world map" loading="lazy" />
+            </a>
+          </div>
+          <div class="feature-text reveal">
+            <h3>Cost of Living Map</h3>
+            <p>
+              One map instead of twenty tabs: rent, food, fuel, salaries and
+              childcare for 60 countries and 500 cities, converted into any of
+              28 currencies, with side-by-side comparison of up to three places.
+            </p>
+            <p class="feature-tags">React · MapLibre GL · custom geo pipeline</p>
+            <p class="feature-links">
+              <a href="https://jozsuaheng.github.io/Cost-of-living-map/" target="_blank" rel="noopener">Open the map ↗</a>
+              <a href="https://github.com/JozsuaHeng/Cost-of-living-map" target="_blank" rel="noopener">Source ↗</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-media reveal">
+            <a class="browser-frame parallax" data-speed="0.05" href="https://jozsuaheng.github.io/Visa-requirements-explorer/" target="_blank" rel="noopener">
+              <div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="browser-url">Visa Requirement Explorer</span></div>
+              <img src="assets/visa-map.jpg" alt="Visa Requirement Explorer — world map of visa rules" loading="lazy" />
+            </a>
+          </div>
+          <div class="feature-text reveal">
+            <h3>Visa Requirement Explorer</h3>
+            <p>
+              Pick your passport and the whole world colours itself in —
+              visa-free, visa on arrival, eVisa or embassy-required — for every
+              destination on Earth, down to capital-city markers as you zoom.
+            </p>
+            <p class="feature-tags">D3.js · open data · zero dependencies at runtime</p>
+            <p class="feature-links">
+              <a href="https://jozsuaheng.github.io/Visa-requirements-explorer/" target="_blank" rel="noopener">Open the explorer ↗</a>
+              <a href="https://github.com/JozsuaHeng/Visa-requirements-explorer" target="_blank" rel="noopener">Source ↗</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-media reveal">
+            <a class="browser-frame parallax" data-speed="0.05" href="https://jozsuaheng.github.io/Rostering-app/" target="_blank" rel="noopener">
+              <div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="browser-url">Rostering App</span></div>
+              <img src="assets/rostering.jpg" alt="Rostering app — calendar with plain-English availability" loading="lazy" />
+            </a>
+          </div>
+          <div class="feature-text reveal">
+            <h3>Rostering, in plain English</h3>
+            <p>
+              Type &ldquo;can&rsquo;t work Saturdays, on leave 1–15 July&rdquo;
+              and the roster greys itself out. A scheduling tool for cafés,
+              clinics and shift teams that replaces the manual
+              Excel-highlighting ritual.
+            </p>
+            <p class="feature-tags">React · TypeScript · natural-language date parsing</p>
+            <p class="feature-links">
+              <a href="https://jozsuaheng.github.io/Rostering-app/" target="_blank" rel="noopener">Open the app ↗</a>
+              <a href="https://github.com/JozsuaHeng/Rostering-app" target="_blank" rel="noopener">Source ↗</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-media reveal">
+            <a class="browser-frame parallax" data-speed="0.05" href="https://jozsuaheng.github.io/Art-Projects/world-art-galleries/" target="_blank" rel="noopener">
+              <div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="browser-url">World Art Galleries</span></div>
+              <img src="assets/galleries.jpg" alt="World Art Galleries — interactive directory of 50 famous galleries" loading="lazy" />
+            </a>
+          </div>
+          <div class="feature-text reveal">
+            <h3>World Art Galleries</h3>
+            <p>
+              Fifty of the world&rsquo;s great galleries and museums on one
+              interactive map — each with its history, architecture and a
+              filterable carousel of its best-known artworks, by artist, era
+              and movement.
+            </p>
+            <p class="feature-tags">Interactive map · curated art data · dark mode</p>
+            <p class="feature-links">
+              <a href="https://jozsuaheng.github.io/Art-Projects/world-art-galleries/" target="_blank" rel="noopener">Explore the galleries ↗</a>
+              <a href="https://github.com/JozsuaHeng/Art-Projects" target="_blank" rel="noopener">Source ↗</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="feature">
+          <div class="feature-media reveal">
+            <a class="browser-frame parallax" data-speed="0.05" href="https://github.com/JozsuaHeng/Idle-Cosmos" target="_blank" rel="noopener">
+              <div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="browser-url">Idle Cosmos</span></div>
+              <img src="assets/cosmos.jpg" alt="Idle Cosmos — a pixel universe built from AI token usage" loading="lazy" />
+            </a>
+          </div>
+          <div class="feature-text reveal">
+            <h3>Idle Cosmos</h3>
+            <p>
+              A pixel universe that builds itself out of my AI coding activity —
+              every token of work becomes cosmic energy that assembles the Sun,
+              the planets and eventually the Laniakea Supercluster, block by block.
+            </p>
+            <p class="feature-tags">Canvas · zero-dependency Node · generative art</p>
+            <p class="feature-links">
+              <a href="https://github.com/JozsuaHeng/Idle-Cosmos" target="_blank" rel="noopener">Source ↗</a>
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="container experiments-wrap">
+        <h3 class="experiments-title reveal">…and some things built purely for fun</h3>
+        <div class="experiments">
+          <a class="exp-card reveal" href="https://jozsuaheng.github.io/Random-projects/the-archive/home.html" target="_blank" rel="noopener">
+            <img src="assets/archive.jpg" alt="The Archive — choose-your-own-adventure library" loading="lazy" />
+            <div class="exp-body">
+              <h4>The Archive</h4>
+              <p>A choose-your-own-adventure library — three stories, six endings each.</p>
+            </div>
+          </a>
+          <a class="exp-card reveal" href="https://jozsuaheng.github.io/Random-projects/broetry-generator/" target="_blank" rel="noopener">
+            <img src="assets/broetry.jpg" alt="Broetry Generator" loading="lazy" />
+            <div class="exp-body">
+              <h4>Broetry Generator</h4>
+              <p>Slider-controlled satire of LinkedIn &ldquo;thought leadership&rdquo; posts.</p>
+            </div>
+          </a>
+          <a class="exp-card reveal" href="https://jozsuaheng.github.io/Random-projects/thought-leadership-madlibs/" target="_blank" rel="noopener">
+            <img src="assets/madlibs.jpg" alt="Thought Leadership Mad-Libs" loading="lazy" />
+            <div class="exp-body">
+              <h4>Thought-Leadership Mad-Libs</h4>
+              <p>A buzzword engine that guarantees zero information content.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-cta">
+      <p class="footer-line">Let&rsquo;s build something <em class="accent-serif">worth&nbsp;sailing&nbsp;for.</em></p>
+      <p class="footer-sub">Open to conversations about strategy roles, ventures and investment in Golden Island Cruises.</p>
+      <a class="btn btn-gold" href="mailto:jozsua.heng@gmail.com">jozsua.heng@gmail.com</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/jozsuaheng" target="_blank" rel="noopener">LinkedIn</a>
+      <span>·</span>
+      <a href="https://github.com/JozsuaHeng" target="_blank" rel="noopener">GitHub</a>
+      <span>·</span>
+      <a href="https://komododiscoverytour.com/" target="_blank" rel="noopener">Golden Island Cruises</a>
+    </div>
+    <p class="footer-copy">© 2026 Jozsua Heng · Designed and built by me (with my AI first mate).</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
