@@ -42,12 +42,26 @@ resource; the site degrades gracefully to system fonts offline.
 - `index.html` / `venture.html` / `projects.html` / `about.html` — the four
   pages (see above). Nav and footer markup is duplicated across all four —
   keep them in sync when editing either.
-- `styles.css` — design system (dark background `#0a0d14`, gold accent
-  `#e0b568` echoing the Golden Island Cruises brand), responsive layout,
-  reveal/parallax styling, reduced-motion fallbacks.
+- `styles.css` — design system: dark ink background `#0a0e14`, **ocean-teal
+  accent `#6edacb`** (user explicitly vetoed the earlier gold — it reminded
+  them of the Boss Tradie logo; don't reintroduce yellows/golds), fonts
+  **Fraunces** (display/italic) + **Manrope** (body). Responsive layout,
+  reveal/parallax styling, collapsible-timeline styling, the `.illuminate`
+  email-glow keyframes, reduced-motion fallbacks.
 - `script.js` — IntersectionObserver reveal-on-scroll with stagger,
-  animated stat counters, gentle parallax on the framed screenshots.
-  Every effect is disabled under `prefers-reduced-motion`.
+  animated stat counters, gentle parallax on framed screenshots, and the
+  "Get in touch" → `#contact` footer scroll that makes the email button
+  glow (`#email-btn` + `.illuminate`). Every effect is disabled under
+  `prefers-reduced-motion`.
+
+Key content decisions (user-confirmed 2026-07-19): headline title is
+**"Strategy & transformation consultant"**; locations read
+**Singapore · Lombok · Sydney · Brisbane**; contact is LinkedIn + GitHub
+only (no Instagram); timeline highlights are collapsed `<details>` blocks;
+the Venture page lists the six-brand network (Golden Island Cruises,
+17Tour Agency, Lombok Tour Booking, Komodo Island Tour .id, Gili Trawangan
+Tour & Travel, Bali Gili Fast Boat Official); the Projects page leads with
+consulting engagement cards (case studies are placeholders for now).
 - `assets/` — screenshots of the live projects, captured with headless
   Chrome and compressed to ~1200px JPEGs. To refresh one:
   `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"

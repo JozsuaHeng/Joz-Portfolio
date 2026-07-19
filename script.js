@@ -77,6 +77,29 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
   nums.forEach((el) => io.observe(el));
 })();
 
+/* ---------- "Get in touch" → scroll to footer, illuminate the email ---------- */
+(function contactGlow() {
+  const email = document.getElementById("email-btn");
+  if (!email) return;
+
+  function glow() {
+    // restart the animation even if it already ran
+    email.classList.remove("illuminate");
+    void email.offsetWidth;
+    email.classList.add("illuminate");
+  }
+
+  document.querySelectorAll('a[href="#contact"]').forEach((a) => {
+    a.addEventListener("click", () => {
+      // wait for the smooth scroll to (mostly) arrive before glowing
+      setTimeout(glow, reducedMotion ? 0 : 700);
+    });
+  });
+
+  // also glow when landing directly on a #contact URL
+  if (location.hash === "#contact") setTimeout(glow, 400);
+})();
+
 /* ---------- gentle parallax on framed screenshots ---------- */
 (function parallax() {
   if (reducedMotion) return;
