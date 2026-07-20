@@ -11,7 +11,7 @@ version). Pages:
   with expanded bullet points per role.
 - `venture.html` — **Venture**: Golden Island Cruises.
 - `projects.html` — **Projects**: feature rows + fun experiments.
-- `about.html` — **About**: education, leadership, toolkit, drives.
+- `resume.html` — **Resume**: the one-page resume rendered natively (source: the resume PDF the user supplied 2026-07-20; keep in sync with future resume updates).
 
 All pages share `styles.css`, `script.js`, and the same nav (active tab via
 `aria-current="page"`) and contact footer. Presenting:
@@ -39,7 +39,7 @@ opened straight from `index.html` or hosted on GitHub Pages (`.nojekyll`
 included). Google Fonts (Inter + Instrument Serif) is the only external
 resource; the site degrades gracefully to system fonts offline.
 
-- `index.html` / `venture.html` / `projects.html` / `about.html` — the four
+- `index.html` / `venture.html` / `projects.html` / `resume.html` — the four
   pages (see above). Nav and footer markup is duplicated across all four —
   keep them in sync when editing either.
 - `styles.css` — design system: dark ink background `#0a0e14`, **ocean-teal
@@ -73,6 +73,16 @@ assets/brands/ (also sourced from the GIC site). The Projects page leads
 with consulting engagement cards, each with an inline SVG line icon
 (case studies are placeholders for now). About page includes a Quick facts
 card with work rights (Singapore citizen · Australian PR).
+
+2026-07-20 content rules (user-directed): **never mention the Singapore
+Armed Forces / military service anywhere** on the site (removed from the
+About me, timeline and projects cards); no "spreadsheet and a handshake"
+line; frame the coding work as **"AI-assisted development with Claude
+Code"**, not "web development" or "building software on the side";
+timeline items carry briefcase (work) / graduation-cap (education)
+`.tl-mark` icons; the About tab was renamed **Resume** (resume.html) and
+renders the one-page resume; the resume's phone number stays OFF the
+site.
 - `assets/` — screenshots of the live projects, captured with headless
   Chrome and compressed to ~1200px JPEGs. To refresh one:
   `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"

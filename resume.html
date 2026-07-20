@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jozsua Heng — Resume</title>
+  <meta name="description" content="Jozsua Heng's resume — business analyst across ERP, finance and digital transformation programs, paired with hands-on founder experience." />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e1218'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%236edacb' text-anchor='middle'%3EJH%3C/text%3E%3C/svg%3E" />
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t && window.matchMedia("(prefers-color-scheme: light)").matches) t = "light";
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="specks" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <a class="nav-brand" href="index.html" aria-label="Home">
+      <span class="monogram">JH</span>
+    </a>
+    <nav class="nav-links" aria-label="Pages">
+      <a href="index.html">Journey</a>
+      <a href="venture.html">Venture</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html" aria-current="page">Resume</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.5 4.9 4.9 3.5l2.1 2.1-1.4 1.4-2.1-2.1zm13.5 13.5 1.4-1.4 2.1 2.1-1.4 1.4-2.1-2.1zM1 11h3v2H1v-2zm19 0h3v2h-3v-2zM3.5 19.1l2.1-2.1 1.4 1.4-2.1 2.1-1.4-1.4zM17 5.6l2.1-2.1 1.4 1.4-2.1 2.1-1.4-1.4z"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 22a10 10 0 0 1-8.7-14.9A10 10 0 0 1 11 2.1a1 1 0 0 1 .9 1.6 8 8 0 0 0 8.4 12.4 1 1 0 0 1 1.2 1.4A10 10 0 0 1 12.3 22z"/></svg>
+    </button>
+    <a class="nav-cta" href="#contact">Get in touch</a>
+  </header>
+
+  <main>
+    <div class="page-head container">
+      <p class="eyebrow reveal"><span class="eyebrow-line"></span>Resume</p>
+      <h1 class="section-title reveal">The one-<em class="accent-serif">pager</em></h1>
+      <p class="rs-summary reveal">
+        Business Analyst with 4+ years across ERP, finance and digital
+        transformation programs in enterprise and startup environments, paired
+        with hands-on founder experience scaling a bootstrapped venture 150%
+        in two years. Direct Web3 GTM experience behind a $13.5M pre-seed
+        raise. <span style="color: var(--ink-faint);">Singapore citizen ·
+        Australian permanent resident.</span>
+      </p>
+    </div>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+
+        <div class="rs-section reveal">
+          <h2 class="rs-head">Professional Experience</h2>
+
+          <div class="rs-item">
+            <h3><a href="venture.html">Golden Island Cruises</a></h3>
+            <p class="rs-role">Director, Owner</p>
+            <p class="rs-meta">Lombok, Indonesia<br />Nov 2024 — Present</p>
+            <ul class="tl-points">
+              <li>Built and scaled a maritime tourism venture from 0 to 1, driving <strong>150% capacity growth in two years</strong>.</li>
+              <li>Ran a lean, bootstrapped operating model on <strong>&ldquo;Blue Economy&rdquo; principles</strong>, cutting CapEx and overheads by 25%.</li>
+              <li>Designed a <strong>&ldquo;Partnership Pathway&rdquo; equity model</strong> that boosted staff retention 80% and professionalised operations.</li>
+              <li>Own end-to-end delivery for a remote <strong>team of 30</strong>, shipping luxury-grade standards in a high-pressure market.</li>
+              <li>Driving a pivot toward a <strong>social-enterprise model</strong> centred on indigenous employment and cultural preservation.</li>
+            </ul>
+          </div>
+
+          <div class="rs-item">
+            <h3><a href="https://www.mater.org.au/" target="_blank" rel="noopener">Mater Misericordiae Ltd</a></h3>
+            <p class="rs-role">Business Analyst</p>
+            <p class="rs-meta">Brisbane, Australia<br />Dec 2024 — May 2026</p>
+            <ul class="tl-points">
+              <li>Owned analysis and execution for an <strong>$18M finance and supply-chain transformation</strong> across a $1B+ network.</li>
+              <li>Co-led a full-scale <strong>MS D365 rebuild</strong>, replacing legacy processes with streamlined, future-ready workflows.</li>
+              <li>Owned project delivery across <strong>16 workstreams from 600+ requirements</strong>, working with senior leadership.</li>
+              <li>Caught and fixed <strong>300+ critical data-integrity risks</strong> before they hit executive decisions or operations.</li>
+              <li>Aligned Finance, IT, Supply Chain and Clinical teams around one roadmap, cutting duplicated work and rework.</li>
+              <li>Acted as <strong>right hand to the CFO</strong>, crafting polished data packs and decks used directly in board reporting.</li>
+              <li>Built <strong>due-diligence and transition materials for a major hospital merger</strong>, informing executive sign-off.</li>
+            </ul>
+          </div>
+
+          <div class="rs-item">
+            <h3><a href="https://gsamc.com.au/" target="_blank" rel="noopener">GSA Management Consulting</a></h3>
+            <p class="rs-role">Senior Management Consultant · Management Consultant</p>
+            <p class="rs-meta">Brisbane, Australia<br />Jun 2024 — Dec 2024<br />Nov 2022 — Jun 2024</p>
+            <ul class="tl-points">
+              <li>Delivered consulting across <strong>Health, Emergency Services, Education, Agriculture and Construction</strong>.</li>
+              <li>Built a <strong>cost model and options analysis</strong> for a Health client that earned a formal commendation.</li>
+              <li>Owned a cross-departmental transition for an Emergency Services client, hitting <strong>100% on-time delivery</strong>.</li>
+              <li>Founded the <strong>Internal Tech Advisory Team</strong>, delivering a &ldquo;Digital Readiness&rdquo; framework and AI-readiness training.</li>
+              <li>Won the <strong>Defence National Security Workforce Awards</strong> and placed finalist at the <strong>Australian Aviation Awards</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rs-section reveal">
+          <h2 class="rs-head">Other Experience</h2>
+
+          <div class="rs-item">
+            <h3><a href="https://github.com/JozsuaHeng" target="_blank" rel="noopener">Independent Projects</a></h3>
+            <p class="rs-role">AI-Assisted Development · github.com/JozsuaHeng</p>
+            <p class="rs-meta">Singapore<br />Jun 2026 — Present</p>
+            <ul class="tl-points">
+              <li>Self-taught <strong>AI-assisted development</strong> using Claude Code and VS Code, building hands-on technical fluency — see the <a href="projects.html" style="color: var(--accent);">Projects</a> page.</li>
+            </ul>
+          </div>
+
+          <div class="rs-item">
+            <h3>Freelance</h3>
+            <p class="rs-role">Market Research Consultant (Web3 / Crypto)</p>
+            <p class="rs-meta">Sydney, Australia<br />Jun 2022 — Oct 2022</p>
+            <ul class="tl-points">
+              <li>Drove <strong>GTM strategy for web3academy and NiftySubs</strong>, helping close a pre-seed round at a $13.5M valuation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rs-section reveal">
+          <h2 class="rs-head">Education</h2>
+
+          <div class="rs-item">
+            <h3><a href="https://www.sydney.edu.au/" target="_blank" rel="noopener">The University of Sydney (USYD)</a></h3>
+            <p class="rs-role">Master of Management (Postgraduate Program)</p>
+            <p class="rs-meta">Sydney, Australia<br />Jul 2021 — Jun 2022</p>
+            <ul class="tl-points">
+              <li>Led a strategic <strong>market-entry project for a Web3 EdTech startup</strong>, later retained as a freelance consultant for implementation.</li>
+            </ul>
+          </div>
+
+          <div class="rs-item">
+            <h3><a href="https://www.uq.edu.au/" target="_blank" rel="noopener">The University of Queensland (UQ)</a></h3>
+            <p class="rs-role">Bachelor of Business Management — Major in International Business</p>
+            <p class="rs-meta">Brisbane, Australia<br />Feb 2019 — Jul 2020</p>
+            <ul class="tl-points">
+              <li>Awarded the 2020 <strong>Dean&rsquo;s Commendation for Academic Excellence</strong> for maintaining a GPA in the top 10%.</li>
+              <li>Acted as <strong>Master of Ceremonies</strong> for a 300-person gala, managing audience engagement and event flow.</li>
+              <li>Selected as a <strong>UQ BEL Global Mates mentor</strong>, guiding international students on career and professional development.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rs-section reveal">
+          <h2 class="rs-head">Skills &amp; Personal</h2>
+          <dl class="rs-skills">
+            <div class="rs-skill"><dt>Languages</dt><dd>English (Native), Mandarin Chinese (Intermediate)</dd></div>
+            <div class="rs-skill"><dt>IT Skills</dt><dd>MS Office Suite, Project, Visio, Power BI, D365, Salesforce, SAP Ariba, Jira, Miro, SEO/SEM, Claude Code</dd></div>
+            <div class="rs-skill"><dt>Interests</dt><dd>Investing &amp; Trading, Web3, Reading, Social Entrepreneurship &amp; Innovation</dd></div>
+          </dl>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer-cta">
+      <p class="footer-line">Let&rsquo;s <em class="accent-serif">talk.</em></p>
+      <p class="footer-sub">I&rsquo;m open to conversations across strategy and management-consulting roles, startups and Web3 — and to partners and investors interested in Golden Island Cruises.</p>
+      <a class="btn btn-accent" id="email-btn" href="mailto:jozsua.heng@gmail.com">jozsua.heng@gmail.com</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/jozsuaheng" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+      <a href="https://github.com/JozsuaHeng" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>GitHub</a>
+      <a href="https://komododiscoverytour.com/" target="_blank" rel="noopener">Golden Island Cruises</a>
+    </div>
+    <p class="footer-copy">© 2026 Jozsua Heng · Designed and built by me (with my AI first mate).</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
