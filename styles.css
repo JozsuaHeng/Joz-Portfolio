@@ -818,6 +818,32 @@ svg.icon { width: 18px; height: 18px; vertical-align: -3.5px; fill: currentColor
 .rs-tab.active { background: var(--accent); color: var(--bg); }
 .rs-panel[hidden] { display: none; }
 
+/* two-page view: lay the content out as two page-like columns on desktop,
+   split at the same point the source PDF actually breaks pages */
+.rs-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+.rs-col:last-child {
+  border-left: 1px solid var(--line);
+  padding-left: 48px;
+  margin-left: 48px;
+}
+.rs-head .rs-cont {
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 500;
+  font-size: 0.85em;
+  color: var(--ink-faint);
+  margin-left: 6px;
+}
+@media (max-width: 900px) {
+  .rs-columns { display: block; }
+  .rs-col:last-child { border-left: none; padding-left: 0; margin-left: 0; margin-top: 4px; }
+}
+
 .rs-summary {
   font-size: 16px;
   color: var(--ink-dim);
