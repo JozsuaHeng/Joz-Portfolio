@@ -792,6 +792,32 @@ svg.icon { width: 18px; height: 18px; vertical-align: -3.5px; fill: currentColor
 /* ============================================================
    RESUME page — the one-pager, rendered natively
    ============================================================ */
+/* one-page / two-page segmented toggle */
+.rs-toggle {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  margin-bottom: 30px;
+}
+.rs-tab {
+  border: none;
+  background: transparent;
+  color: var(--ink-dim);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+.rs-tab:hover { color: var(--ink); }
+.rs-tab.active { background: var(--accent); color: var(--bg); }
+.rs-panel[hidden] { display: none; }
+
 .rs-summary {
   font-size: 16px;
   color: var(--ink-dim);

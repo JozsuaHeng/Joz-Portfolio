@@ -185,6 +185,37 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
   });
 })();
 
+/* ---------- resume one-page / two-page toggle ---------- */
+(function resumeToggle() {
+  const tabs = document.querySelectorAll(".rs-tab");
+  if (!tabs.length) return;
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      if (tab.classList.contains("active")) return;
+
+      tabs.forEach((t) => {
+        const active = t === tab;
+        t.classList.toggle("active", active);
+        t.setAttribute("aria-selected", active ? "true" : "false");
+      });
+
+      tabs.forEach((t) => {
+        const panel = document.getElementById(t.dataset.target);
+        if (!panel) return;
+        const show = t === tab;
+        panel.hidden = !show;
+        if (show) {
+          // manual switch, not a scroll discovery — reveal immediately,
+          // since these elements may never have intersected the viewport
+          // while their panel was display:none
+          panel.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
+        }
+      });
+    });
+  });
+})();
+
 /* ---------- "Get in touch" → scroll to footer, illuminate the email ---------- */
 (function contactGlow() {
   const email = document.getElementById("email-btn");
